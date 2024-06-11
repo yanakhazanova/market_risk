@@ -27,3 +27,33 @@ class DataProcessor:
             all_data = pd.merge(all_data, df, on='date', how='outer')
         all_data.ffill(inplace=True)
         return all_data
+    
+    def rename_columns(self, data_frames):
+        renamed_data_frames = {}
+        for key, df in data_frames.items():
+            new_columns = {col: f"{key}_{col}" for col in df.columns if col != 'date'}
+            renamed_df = df.rename(columns=new_columns)
+            renamed_data_frames[key] = renamed_df
+        return renamed_data_frames
+    
+    def clean_data(self, df, row_threshold=0.25, col_threshold=0.25):
+        # Удаление строк, если количество NaN превышает row_threshold
+        row_thresh = int(row_threshold * df.shape[1])
+        df_cleaned = df.dropna(thresh=row_thresh)
+        
+        # Удаление столбцов, если количество NaN превышает col_threshold
+        col_thresh = int(col_threshold * df.shape[0])
+        df_cleaned = df_cleaned.dropna(axis=1, thresh=col_thresh)
+        
+        return df_cleaned
+
+    def fill_missing_data(self, df, method='ffill', value=None):
+        if method == 'ffill':
+            df_filled = df.ffill()
+        elif method == 'bfill':
+            df_filled = df.bfill()
+        elif value is not None:
+            df_filled = df.fillna(value)
+        else:
+            raise ValueError("Method must be 'ffill', 'bfill', or a specific value must be provided")
+        return df_filled
