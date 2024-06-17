@@ -14,6 +14,7 @@ class DataProcessor:
     def load_data(self, file_paths):
         data_frames = {}
         for key, path in file_paths.items():
+            print(path)
             df = pd.read_csv(path, parse_dates=['date'])
             merged_df = pd.merge(self.trading_days, df, on='date', how='left')
             merged_df.ffill(inplace=True)
