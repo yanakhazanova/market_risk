@@ -26,3 +26,10 @@ rename:
     moex_ind_CLOSE : Индекс_МосБиржи
     cdv_int_rate_KDV_1 : Компонент_процентной_ставки_1
     cdv_int_rate_KDV_2 : Компонент_процентной_ставки_2
+
+    risk_factors_Газ : Газ
+    risk_factors_Золото : Золото
+    risk_factors_Палладий : Палладий
+    risk_factors_Серебро : Серебро
+    risk_factors_Алюминий : Алюминий
+    risk_factors_Платина : Платина

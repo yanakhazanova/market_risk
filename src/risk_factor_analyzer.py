@@ -23,7 +23,7 @@ class RiskFactorAnalyzer:
         self.pca = PCA(n_components=n_components)
         self.pca_components_ = self.pca.fit_transform(self.scaled_data)
         self.explained_variance_ratio_ = self.pca.explained_variance_ratio_
-
+    
     def plot_pca_variance(self):
         plt.figure(figsize=(10, 4))
         plt.plot(np.cumsum(self.explained_variance_ratio_), marker='o', linestyle='--')
@@ -66,7 +66,7 @@ class RiskFactorAnalyzer:
 
     def plot_correlation_matrix(self):
         correlation_matrix = self.data.drop(columns=['date']).corr()
-        plt.figure(figsize=(12, 10))
+        plt.figure(figsize=(9, 6))
         sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', vmin=-1, vmax=1)
         plt.title('Correlation Matrix of Risk Factors')
         plt.show()
