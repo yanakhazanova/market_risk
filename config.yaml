@@ -24,3 +24,5 @@ rename:
     int_rate_int_rate : Уровень_ставки ЦБ
     rts_ind_CLOSE : Индекс_РТС
     moex_ind_CLOSE : Индекс_МосБиржи
+    cdv_int_rate_KDV_1 : Компонент_процентной_ставки_1
+    cdv_int_rate_KDV_2 : Компонент_процентной_ставки_2
