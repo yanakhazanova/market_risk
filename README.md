@@ -17,8 +17,7 @@ To get started with this project, follow these steps:
      
 
 Project Structure:
-
-    data: Contains data for analysis and experiment setup.
-    notebooks: Includes data analysis, risk factor selection and forecasting, and experiment notebooks.
-    source: Holds the source code for the solution.
-    demo.ipynb: A demo notebook showcasing the model's functionality.
+├── data          -- данные для анализа и построения экспериментов                          
+├── notebooks     -- анализ данных, отбор и прогнозирование риск-факторов, эксперименты
+├── source        -- исходный код решения
+├── demo.ipynb    -- демо-ноутбук с примером работы модели
